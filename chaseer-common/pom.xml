@@ -18,5 +18,6 @@
         <module>common-redis</module>
         <module>common-core</module>
         <module>common-web</module>
+        <module>common-knife4j</module>
     </modules>
 </project>

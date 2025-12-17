@@ -7,11 +7,12 @@
         <groupId>com.cha</groupId>
         <artifactId>chaseer-common</artifactId>
         <version>1.0.001</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
 
     <artifactId>common-web</artifactId>
-    <description>adkfp web应用通用模块</description>
+    <description>cha web应用通用模块</description>
 
     <dependencies>
 
@@ -21,7 +22,7 @@
         <artifactId>common-core</artifactId>
     </dependency>
 
-    <!-- ADKFP knife4j 配置抽取 -->
+    <!-- cha knife4j 配置抽取 -->
     <dependency>
         <groupId>com.cha</groupId>
         <artifactId>common-knife4j</artifactId>

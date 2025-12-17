@@ -1,16 +1,16 @@
-package com.adkfp.common.auth.config;
+package com.cha.common.auth.config;
 
 import cn.dev33.satoken.context.SaHolder;
 import cn.dev33.satoken.filter.SaServletFilter;
 import cn.dev33.satoken.same.SaSameUtil;
-import com.adkfp.common.auth.aspect.PermissionAspect;
-import com.adkfp.common.auth.filter.MobileUserFilter;
-import com.adkfp.common.auth.filter.TenancyIdWebFilter;
-import com.adkfp.common.auth.service.SmsService;
-import com.adkfp.common.auth.service.impl.AliyunSmsServiceImpl;
-import com.adkfp.common.core.constant.SecurityConstant;
-import com.adkfp.common.redis.util.RedisUtils;
-import com.adkfp.common.web.result.R;
+import com.cha.common.auth.aspect.PermissionAspect;
+import com.cha.common.auth.filter.MobileUserFilter;
+import com.cha.common.auth.filter.TenancyIdWebFilter;
+import com.cha.common.auth.service.SmsService;
+import com.cha.common.auth.service.impl.AliyunSmsServiceImpl;
+import com.cha.common.core.constant.SecurityConstant;
+import com.cha.common.redis.util.RedisUtils;
+import com.cha.common.web.result.R;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -41,7 +41,7 @@ public class WebConfig {
     public Filter saServletFilter(GatewayRequestWhiteListProperties properties) {
         List<String> ignoreUrls = Optional.ofNullable(properties.getIgnoreUrls()).orElse(Collections.emptyList());
         String actuatorPath = "/actuator/**";
-        String nacosPath = "/**/adkfp-system/**";
+        String nacosPath = "/**/cha-system/**";
         return new SaServletFilter()
                 .addInclude("/**")
                 .addExclude("/favicon.ico")

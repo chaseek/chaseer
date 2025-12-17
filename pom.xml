@@ -80,4 +80,489 @@
         <dm.version>8.1.2.192</dm.version>
     </properties>
 
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringCloud 微服务 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- SpringBoot Admin -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!--spring boot client 依赖-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <!-- feign-httpclient -->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-httpclient</artifactId>
+                <version>${feign.httpclient.version}</version>
+            </dependency>
+
+            <!-- 阿里巴巴的druid数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- Mybatis-Plus 注意版本-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.Plus.version}</version>
+            </dependency>
+            <!-- Mybatis-Plus逆向工程依赖-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.Plus.generator.version}</version>
+            </dependency>
+            <!-- Mybatis-Plus逆向工程需要模板引擎的依赖-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.engine.core.version}</version>
+            </dependency>
+            <!-- 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <!--Mybatis-Plus sql解析器 -->
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+
+            <!-- Mysql Connector -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.java.version}</version>
+            </dependency>
+
+            <!-- 动态数据源配置-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic.version}</version>
+            </dependency>
+
+            <!-- sharding.sphere分库分表-->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+                <version>${sharding.sphere.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+            <!--sa token-->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot-starter</artifactId>
+                <version>${sa.token.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-reactor-spring-boot-starter</artifactId>
+                <version>${sa.token.version}</version>
+            </dependency>
+
+            <!-- 整合redis, 使session全局共享-->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-dao-redis-jackson</artifactId>
+                <version>${sa.token.version}</version>
+            </dependency>
+
+            <!-- OSS 配置 -->
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-s3</artifactId>
+                <version>${aws.java.sdk.s3.version}</version>
+            </dependency>
+
+            <!--minio分布式文件管理-->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio_version}</version>
+            </dependency>
+
+            <!-- Alibaba Fastjson 解析器和生成器 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--easyexcel，推荐使用3.0 以上版本，功能更加完善 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+
+            <!-- 在使用线程池等会缓存线程的组件情况下传递ThreadLocal -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable.thread.local.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
+            </dependency>
+
+            <!-- xxl-job -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl.job.core.version}</version>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- Apache Lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+
+            <!-- HuTool是一个小而全的Java工具类库 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- xiaoymin swagger聚合接口文档 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-aggregation-spring-boot-starter</artifactId>
+                <version>${knife4j.aggregation.version}</version>
+            </dependency>
+
+            <!-- xiaoymin swagger -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>pro.fessional</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- rocketmq -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
+            </dependency>
+
+            <!--阿里云-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.version}</version>
+            </dependency>
+
+            <!--word转pdf-->
+            <dependency>
+                <groupId>com.aspose</groupId>
+                <artifactId>aspose-words</artifactId>
+                <version>${aspose.version}</version>
+            </dependency>
+
+            <!-- ADKFP 核心模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-core</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP 认证鉴权模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-auth</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP knife4j 配置抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-knife4j</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP 持久层模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-mybatis-plus</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP redis模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-redis</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP web通用模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-web</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP web 和DB 依赖管理 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-web-db</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP 接口内部调用模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>api-system</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP 日志模块 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-log</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-pdf</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ADKFP xxl-job -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-job</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- 通用服务抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-service</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- excel通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-excel</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- rocketmq抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-rocketmq</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- device抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-device</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- 分库分表通用 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-sharding</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- 数据同步通用 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-data-sync</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- interactive-common通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>interactive-common</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- interactive-face通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>interactive-face</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ry,hy,ac19远程调用接口 -->
+            <dependency>
+                <groupId>com.adk.im</groupId>
+                <artifactId>adk-im-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- common-access通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>common-access</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- lift-common通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>lift-common</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- lift-device抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>adkfp-lift-device</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- ac18远程调用接口 -->
+            <dependency>
+                <groupId>com.adk.de</groupId>
+                <artifactId>adk-de-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- device-interactive-common通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>connect-common</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!-- interactive-face通用抽取 -->
+            <dependency>
+                <groupId>com.adkfp</groupId>
+                <artifactId>connect-face</artifactId>
+                <version>${adkfp.version}</version>
+            </dependency>
+
+            <!--达梦数据库驱动-->
+            <dependency>
+                <groupId>com.dameng</groupId>
+                <artifactId>DmJdbcDriver18</artifactId>
+                <version>${dm.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--<distributionManagement>-->
+    <!--<repository>-->
+    <!--<id>releases</id>-->
+    <!--<url>http://192.168.0.239:32070/repository/java-release</url>-->
+    <!--</repository>-->
+    <!--</distributionManagement>-->
+
+    <build>
+        <plugins>
+            <!-- compiler插件, 设定JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <showWarnings>true</showWarnings>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <includeSystemScope>true</includeSystemScope>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

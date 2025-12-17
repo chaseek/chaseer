@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.cha.common.redis.config.RedisConfig,\
+  com.cha.common.redis.util.RedisUtils,\
+  com.cha.common.redis.util.RedisStreamUtil,\
+  com.cha.common.redis.util.RedisStringUtils,\
+  com.cha.common.redis.config.FastJsonRedisSerializer,\
+  com.cha.common.redis.config.CacheConfig,\
+  com.cha.common.redis.util.LockUtils,\
+  com.cha.common.redis.util.RLockUtils

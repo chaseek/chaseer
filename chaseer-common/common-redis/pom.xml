@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.cha</groupId>
+        <groupId>com.cha</groupId>
         <artifactId>chaseer-common</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.001</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -17,13 +17,13 @@
 
         <!-- common-core -->
         <dependency>
-            <groupId>com.adkfp</groupId>
+            <groupId>com.cha</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
 
-        <!-- ADKFP knife4j 配置抽取 -->
+        <!-- cha knife4j 配置抽取 -->
         <dependency>
-            <groupId>com.adkfp</groupId>
+            <groupId>com.cha</groupId>
             <artifactId>common-knife4j</artifactId>
         </dependency>
 
